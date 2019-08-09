@@ -59,6 +59,7 @@ FEW IMPORTANT POINTS#
 Links : https://blog.heroku.com/managing_your_microservices_on_heroku_with_netflix_s_eureka
 ......................................................................................................................................
 _______________________________________________________________________________________________________________________________________
+# Circuit Breaker (Hystrix)
 Circuit Breaker (Hystrix) # Hystrix to implement circuit breaker while invoking underlying microservice. Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable. 
 
 In other words Hystrix is  required to enable fault tolerance in the application where some underlying service is down/throwing error permanently, we need to fall back to different path of program execution automatically. 
@@ -74,7 +75,7 @@ Hystrix configuration is done in four major steps.
 3. Add @EnableHystrixDashboard annotation
 4. Add annotation @HystrixCommand(fallbackMethod = "myFallbackMethod")
 
-
+# Hystrix
 Hystrix is designed to:
 
 1. Provide protection and control over failures and latency from services typically accessed over the network
@@ -99,13 +100,13 @@ https://blog.heroku.com/using_netflix_zuul_to_proxy_your_microservices
 https://spring.io/guides/gs/routing-and-filtering/
 
 #Zuul is a JVM-based router and server side load balancer by Netflix.
-# Using Netflix Zuul to Proxy your Microservices
+#Using Netflix Zuul to Proxy your Microservices
 
 
 Routing is an integral part of a microservice architecture. For example, /api/users is mapped to the user service and /api/shop is mapped to the shop service. Zuul is a JVM-based router and server side load balancer by Netflix.
 
 
-#Using Netflix Zuul to Proxy your Microservices
+# Using Netflix Zuul to Proxy your Microservices
 
 It provides a unified “front door” to your system, which allows a browser, mobile app, or other user interface to consume services from multiple hosts without managing cross-origin resource sharing (CORS) and authentication for each one. You can integrate Zuul with other Netflix projects like Hystrix for fault tolerance and Eureka for service discovery, or use it to manage routing rules, filters, and load balancing across your system.
 
@@ -115,9 +116,7 @@ It provides a unified “front door” to your system, which allows a browser, m
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Client Side Load Balancer: Ribbon
+# Client Side Load Balancer: Ribbon
 
 1. Ribbon is a client-side load balancer that gives you a lot of control over the behavior of HTTP and TCP clients.
 
@@ -126,13 +125,9 @@ Client Side Load Balancer: Ribbon
 
 3. Ribbon API works based on the concept called “Named Client”. While configuring Ribbon in our application configuration file we provide a name for the list of servers included for the load balancing.
 
-Let’s take it for a spin.
+# Let’s take it for a spin.
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-complete microsystem example
+Complete microsystem example
 
 Link:  https://thepracticaldeveloper.com/2017/06/27/hystrix-fallback-with-zuul-and-spring-boot/
 github : https://github.com/microservices-practical/microservices-v8
