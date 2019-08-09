@@ -7,8 +7,8 @@ Spring Cloud Netflix Stack Component : The patterns provided include
 3. Intelligent Routing (Zuul Lib) #Zuul to Proxy your Microservices, It provides a unified “front door” to your System
 4. Client Side Load Balancing (Ribbon Lib).
 
-Service Discovery (Eureka) - summary
-......................................................................................................................................
+Service Discovery (Eureka) - 
+## summary
 In a microservices application, the set of running service instances changes dynamically. Instances have dynamically assigned network locations. Consequently, in order for a client to make a request to a service it must use a service-discovery mechanism.
 
 > A key part of service discovery is the service registry.
@@ -22,7 +22,7 @@ There are two main service-discovery patterns:
 1. client-side discovery - in a system clients query the service registry, select an available instance, and make a request.
 2. service-side discovery- in a system clients make requests via a router, which queries the service registry and forwards the request to an available instance.
 
-point by point 
+# point by point 
 1.Netflix Eureka is good example of a service registry. It provides a REST API for registering and querying service instances.
 
 2. The service registry is a key part of service discovery. It is a database containing the network locations of service instances. A service registry needs to be highly available and up to date.
@@ -51,13 +51,12 @@ When a client registers with Eureka, it provides meta-data about itself — 
 
 ----------------end How to Include Eureka Server. Using the Eureka Server---------------
 
-FEW IMPORTANT POINTS#
-# By default, every Eureka server is also a Eureka client and requires (at least one) service URL to locate a peer. If you do not provide it, the service runs and works, but it fills your logs with a lot of noise about not being able to register with the peer.
+# FEW IMPORTANT POINTS
+## By default, every Eureka server is also a Eureka client and requires (at least one) service URL to locate a peer. If you do not provide it, the service runs and works, but it fills your logs with a lot of noise about not being able to register with the peer.
 
 
 
 Links : https://blog.heroku.com/managing_your_microservices_on_heroku_with_netflix_s_eureka
-......................................................................................................................................
 _______________________________________________________________________________________________________________________________________
 # Circuit Breaker (Hystrix)
 Circuit Breaker (Hystrix) # Hystrix to implement circuit breaker while invoking underlying microservice. Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable. 
@@ -75,7 +74,7 @@ Hystrix configuration is done in four major steps.
 3. Add @EnableHystrixDashboard annotation
 4. Add annotation @HystrixCommand(fallbackMethod = "myFallbackMethod")
 
-# Hystrix
+## Hystrix
 Hystrix is designed to:
 
 1. Provide protection and control over failures and latency from services typically accessed over the network
@@ -99,8 +98,9 @@ https://dzone.com/articles/spring-cloud-netflix-zuul-edge-serverapi-gatewayga
 https://blog.heroku.com/using_netflix_zuul_to_proxy_your_microservices
 https://spring.io/guides/gs/routing-and-filtering/
 
-#Zuul is a JVM-based router and server side load balancer by Netflix.
-#Using Netflix Zuul to Proxy your Microservices
+# Zuul
+1. Zuul is a JVM-based router and server side load balancer by Netflix.
+2. Using Netflix Zuul to Proxy your Microservices
 
 
 Routing is an integral part of a microservice architecture. For example, /api/users is mapped to the user service and /api/shop is mapped to the shop service. Zuul is a JVM-based router and server side load balancer by Netflix.
@@ -113,7 +113,6 @@ It provides a unified “front door” to your system, which allows a browser, m
 1. it provides a unified “front door” to your system.
 2. Use it to manage routing rules, filters, and load balancing across your system.
 3. If Zuul is connected to a Eureka server, it can automatically add fault tolerance and client-side load balancing to the services it proxies.
-
 
 
 # Client Side Load Balancer: Ribbon
